@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Box, styled, Typography } from '@mui/material';
-
 import { boutiquesData } from '../../constants/Data';
 
 const StyledTypography = styled(Typography)({
@@ -45,32 +42,23 @@ const ImageContainer = styled(Box)`
 `;
 
 function Boutiques() {
-  const [products, setProducts] = useState([]);
-  const handleClick = async (collection) => {
-    console.log('Button clicked:', collection);
-    try {
-      const url = `http://localhost:8000/api/boutiques/${collection}`;
-      const response = await axios.get(url);
-      console.log('Response data:', response.data);
-      setProducts(response.data);
-    } catch (error) {
-      console.error(error);
-    }
+  const navigate = useNavigate();
+
+  const handleClick = (collection) => {
+    navigate(`/boutiques/${collection}`);
   };
 
   return (
     <Container>
       <StyledTypography>PREMIUM BOUTIQUES</StyledTypography>
       <BoutiqueContainer>
-        {boutiquesData.map((data, index) => {
-          return (
-            <ImageContainer key={index}>
-              <Image src={data.url} alt="collection" />
-              <Typography>{data.text}</Typography>
-              <button onClick={() => handleClick(data.text)}>Get Products</button>
-            </ImageContainer>
-          );
-        })}
+        {boutiquesData.map((data, index) => (
+          <ImageContainer key={index}>
+            <Image src={data.url} alt="collection" />
+            <Typography>{data.text}</Typography>
+            <button onClick={() => handleClick(data.text)}>Get Products</button>
+          </ImageContainer>
+        ))}
       </BoutiqueContainer>
     </Container>
   );
