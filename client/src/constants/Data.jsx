@@ -1,13 +1,38 @@
-export const navData=[
-  {text:"BOY FASHION"},
-  {text:"GIRL FASHION"},
-  {text:"FOOTWEAR"},
-  {text:"TOYS"},
-  {text:"DIAPERING"},
-  {text:"BATH"},
-  {text:"MOMS"},
-  {text:"HEALTH"}
-]
+export const navData = [
+  {
+    text: "BOY FASHION",
+    submenu: ["T-Shirt", "Shorts", "Jeans"]
+  },
+  {
+    text: "GIRL FASHION",
+    submenu: ["T-Shirt", "Frock", "Skirts"]
+  },
+  {
+    text: "FOOTWEAR",
+    submenu: ["Sneakers", "Sandals", "Boots"]
+  },
+  {
+    text: "TOYS",
+    submenu: ["Action Figures", "Dolls", "Educational"]
+  },
+  {
+    text: "DIAPERING",
+    submenu: ["Diapers", "Wipes", "Creams"]
+  },
+  {
+    text: "BATH",
+    submenu: ["Soaps", "Shampoos", "Towels"]
+  },
+  {
+    text: "MOMS",
+    submenu: ["Maternity Wear", "Corset Belts", "Supplements"]
+  },
+  {
+    text: "HEALTH",
+    submenu: ["Vitamins", "Thermometers", "First Aid"]
+  }
+];
+
 
 export const bannerData=[
   {id:1,url:"https://cdn.fcglcdn.com/brainbees/banners/hp_mktg_p01_prim_flat5045_desktop1720246704661.webp"},

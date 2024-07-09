@@ -10,7 +10,7 @@ const StyledTypography = styled(Typography)({
 
 const Container = styled(Box)`
   background-color: #ccc;
-  padding: 20px;
+  padding: 65px;
 `;
 
 const BoutiqueContainer = styled(Box)`
@@ -53,11 +53,12 @@ function Boutiques() {
       <StyledTypography>PREMIUM BOUTIQUES</StyledTypography>
       <BoutiqueContainer>
         {boutiquesData.map((data, index) => (
+          <button onClick={(e) => handleClick(data.text)}>
           <ImageContainer key={index}>
             <Image src={data.url} alt="collection" />
             <Typography>{data.text}</Typography>
-            <button onClick={() => handleClick(data.text)}>Get Products</button>
-          </ImageContainer>
+            </ImageContainer>
+          </button>
         ))}
       </BoutiqueContainer>
     </Container>

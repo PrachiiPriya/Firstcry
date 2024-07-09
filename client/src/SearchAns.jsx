@@ -43,15 +43,14 @@ const ProductDetail=styled('Button')({
   margin:10
 })
 
-
-function Collection() {
-  const { collection } = useParams();
+function SearchAns() {
+  const { query } = useParams();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/boutiques/${collection}`);
+        const response = await axios.get(`http://localhost:8000/api/boutiques/search/${query}`);
         setProducts(response.data);
       } catch (error) {
         console.error(error);
@@ -59,13 +58,13 @@ function Collection() {
     };
 
     fetchProducts();
-  }, [collection]);
+  }, [query]);
 
   return (
     <Container>
-      <Typography variant="h4" style={{ textAlign: 'center' }}>{collection}</Typography>
+      <Typography variant="h4" style={{ textAlign: 'center' }}>Search Results for: {query}</Typography>
       <ProductContainer>
-        {products.map((product, index) => (
+      {products.map((product, index) => (
           <ProductDetail>
           <ImageContainer key={index}>
             <Image src={product.url} alt={product.title} />
@@ -87,4 +86,4 @@ function Collection() {
   );
 }
 
-export default Collection;
+export default SearchAns;

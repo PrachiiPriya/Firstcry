@@ -9,6 +9,8 @@ import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 
 import { Box } from '@mui/material';
+import SearchAns from './SearchAns';
+import Navigation from './components/home/NavMenu';
 
 function App() {
   return (
@@ -23,10 +25,15 @@ function App() {
           </>
         } />
         <Route path="/boutiques" element={<Boutiques />} />
+<<<<<<< HEAD
         <Route path="/boutiques/:collection" element={<Collection />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
+=======
+        <Route path="/boutiques/:collection" element={<Collection />} />  
+        <Route path="/search/:query" element={<SearchAns />} />
+>>>>>>> origin/master
       </Routes>
     </BrowserRouter>
   );

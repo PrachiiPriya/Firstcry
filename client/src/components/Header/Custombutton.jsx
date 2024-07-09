@@ -51,6 +51,19 @@ const Custombutton = () => {
           </Container>
         </Wrapper>
       </Wrapper>
+<<<<<<< HEAD
+=======
+      <Typography style={{marginBottom:8}}>Schools and Preschools</Typography>
+      <Typography style={{marginBottom:8, marginTop:10}}>Support</Typography>
+      <LoginButton variant='contained'>Login/Register</LoginButton>
+      <Wrapper>
+        <Container>
+        <ShoppingCart/>
+        <Typography>Cart</Typography>
+        </Container>
+      </Wrapper>
+    </Wrapper>
+>>>>>>> origin/master
     </Container>
   );
 };
