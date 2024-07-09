@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { Box, styled, Typography } from '@mui/material';
+import { Box, Button, styled, Typography } from '@mui/material';
 
 const Container = styled(Box)`
   background-color: #ccc;
@@ -36,6 +36,14 @@ const ImageContainer = styled(Box)`
   }
 `;
 
+const ProductDetail=styled('Button')({
+  display:'flex',
+  flexDirection:'row',
+  alignItems:'center',
+  margin:10
+})
+
+
 function Collection() {
   const { collection } = useParams();
   const [products, setProducts] = useState([]);
@@ -58,11 +66,21 @@ function Collection() {
       <Typography variant="h4" style={{ textAlign: 'center' }}>{collection}</Typography>
       <ProductContainer>
         {products.map((product, index) => (
+          <ProductDetail>
           <ImageContainer key={index}>
             <Image src={product.url} alt={product.title} />
             <Typography>{product.title}</Typography>
             <Typography>{product.price}</Typography>
           </ImageContainer>
+          <ImageContainer>
+            <Button>Add to Cart</Button>
+            <Typography>{`Category: ${product.category}`}</Typography>
+            <Typography>{`Description: ${product.description}`}</Typography>
+            <Typography>{`Discount: ${product.discount}`}</Typography>
+            <Typography>{`Collection: ${product.collection}`}</Typography>
+            <Typography>{`Quantity: ${product.quantity}`}</Typography>
+          </ImageContainer>
+          </ProductDetail>
         ))}
       </ProductContainer>
     </Container>
