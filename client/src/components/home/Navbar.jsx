@@ -1,5 +1,11 @@
+<<<<<<< HEAD
+import { Box, styled, Typography } from '@mui/material';
+import React from 'react';
+
+=======
 import React, { useState } from 'react';
 import { Box, Menu, MenuItem, styled, Typography } from '@mui/material';
+>>>>>>> origin/master
 import { navData } from '../../constants/Data';
 import { yellow } from '@mui/material/colors';
 import { useNavigate } from 'react-router-dom';
@@ -15,11 +21,14 @@ const StyledDiv = styled('div')({
   backgroundColor: yellow[500],
   height: '50px',
 });
+<<<<<<< HEAD
+=======
 
 const MenuTitle = styled(Typography)`
   padding: 10px;
   cursor: pointer;
 `;
+>>>>>>> origin/master
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -44,6 +53,11 @@ export default function Navbar() {
     <StyledDiv>
       <Component>
         {navData.map((data, index) => (
+<<<<<<< HEAD
+          <Typography key={index}>{data.text}</Typography>
+        ))}
+      </Component>
+=======
           <MenuTitle
             key={index}
             onClick={(event) => handleMenuOpen(event, data.submenu)}
@@ -63,6 +77,7 @@ export default function Navbar() {
           </MenuItem>
         ))}
       </Menu>
+>>>>>>> origin/master
     </StyledDiv>
   );
 }

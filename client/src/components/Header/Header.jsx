@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {AppBar,Toolbar,styled,Box} from '@mui/material'
 import { pink } from '@mui/material/colors'
 
-//Components
 import Search from './Search';
 import Custombutton from './Custombutton';
 

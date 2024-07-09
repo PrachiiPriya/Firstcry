@@ -1,5 +1,5 @@
-const ProductData = require('./ProductData');
-const ProductSchema = require('./models/ProductSchema');
+const ProductData = require('../server/ProductData');
+const ProductSchema = require('../models/ProductSchema');
 
 const DBdata = async () => {
   try {
