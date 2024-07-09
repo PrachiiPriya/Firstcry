@@ -1,6 +1,5 @@
 import React from 'react'
 
-//Component imports
 import Navbar from './Navbar'
 import Banner from './Banner'
 import { Boutiques } from './Boutiques';

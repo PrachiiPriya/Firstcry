@@ -1,4 +1,4 @@
-const mongoose=require('mongoose')
+const mongoose=require('mongoose');
 const productSchema = new mongoose.Schema({
   url: { type: String, required:true },
   detailUrl: { type: String },
@@ -38,5 +38,5 @@ const productSchema = new mongoose.Schema({
     ]
   }
 });
-const ProductSchema=mongoose.model('ProductSchema',productSchema);
-module.exports=ProductSchema;
+const Product=mongoose.model('ProductSchema',productSchema);
+module.exports=Product;
