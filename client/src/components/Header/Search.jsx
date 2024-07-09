@@ -2,6 +2,8 @@ import { InputBase,Box, styled } from '@mui/material'
 import React from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import { pink } from '@mui/material/colors'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SearchContainer=styled(Box)`
 background-color:#FFFFFF;
@@ -21,12 +23,23 @@ color:${pink[500]}
 `;
 
 export default function Search() {
+  const [Item,setItem]=useState("");
+  const navigate = useNavigate();
+
+  const changeHandler=(e)=>{
+    setItem(e.target.value);
+    console.log(Item);
+  }
+  const submitHandler = () => {
+    navigate(`/search/${Item}`);
+  };
+
   return (
     <SearchContainer>
-      <InputSearchBase placeholder='Search for a category, brand, or product.'/>
-     <SearchIconWrapper>
-      <SearchIcon/>
-     </SearchIconWrapper>
+      <InputSearchBase onChange={(e)=>{changeHandler(e)}} placeholder='Search for a category, brand, or product.'name='searchItem'/>
+      <SearchIconWrapper onClick={submitHandler}>
+        <SearchIcon />
+      </SearchIconWrapper>
     </SearchContainer>
   )
 }

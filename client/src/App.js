@@ -5,6 +5,8 @@ import { Boutiques } from './components/home/Boutiques';
 import Collection from './components/Collection';  
 
 import { Box } from '@mui/material';
+import SearchAns from './SearchAns';
+import Navigation from './components/home/NavMenu';
 
 function App() {
   return (
@@ -19,7 +21,8 @@ function App() {
           </>
         } />
         <Route path="/boutiques" element={<Boutiques />} />
-        <Route path="/boutiques/:collection" element={<Collection />} />  {/* Update this line */}
+        <Route path="/boutiques/:collection" element={<Collection />} />  
+        <Route path="/search/:query" element={<SearchAns />} />
       </Routes>
     </BrowserRouter>
   );
